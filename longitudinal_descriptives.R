@@ -30,6 +30,8 @@ data_long <- data %>%
             by = c("id", "time")) %>%
   mutate(t = as.numeric(time) - 1)
 
+saveRDS(data_long, "data_long.RDS")
+
 #-----------------------------------------
 # summary of descriptives
 #-----------------------------------------

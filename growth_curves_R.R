@@ -114,6 +114,8 @@ anova(lgcm3b_fit, lgcm4_fit)
 
 # for this part of the practical, we use the "data_long" dataset
 
+data_long <- readRDS("data_long.RDS")
+
 # unconditional linear latent growth curve model
 
 summary(gcm1 <- lmer(outcome ~ 1 + t +
