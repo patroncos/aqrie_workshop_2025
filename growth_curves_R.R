@@ -5,8 +5,9 @@
 library(lavaan)
 library(tidyverse)
 library(lme4)
+library(readr)
 
-data = Demo.growth
+data = Demo.growth # this is data from the lavaan package
 
 #-------------------------------------------
 # LGCM
@@ -114,7 +115,7 @@ anova(lgcm3b_fit, lgcm4_fit)
 
 # for this part of the practical, we use the "data_long" dataset
 
-data_long <- readRDS("data_long.RDS")
+data_long <- read_rds("https://github.com/patroncos/aqrie_workshop_2025/raw/refs/heads/main/data_long.RDS")
 
 # unconditional linear latent growth curve model
 

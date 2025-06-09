@@ -6,7 +6,7 @@ library(lavaan)
 library(tidyverse)
 library(lme4)
 
-data = Demo.growth
+data = Demo.growth # this is data from the lavaan package
 
 #-----------------------------------------
 # reshape wide to long for MLM
