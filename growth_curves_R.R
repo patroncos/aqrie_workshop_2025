@@ -108,31 +108,11 @@ anova(lgcm3b_fit, lgcm4_fit)
 
 # What is the decision?
 
-#-----------------------------------------
-# reshape wide to long for MLM
-#-----------------------------------------
-
-data <- data %>%
-  mutate(id = cur_group_rows())
-
-data_long <- data %>%
-  select(id, starts_with("t"), x1, x2) %>%
-  pivot_longer(cols = starts_with("t"),
-               names_to = "time",
-               names_prefix = "t",
-               values_to = "outcome") %>%
-  left_join(data %>%
-              select(id, starts_with("c")) %>%
-              pivot_longer(cols = starts_with("c"),
-                           names_to = "time",
-                           names_prefix = "c",
-                           values_to = "covar"), 
-            by = c("id", "time")) %>%
-  mutate(t = as.numeric(time) - 1)
-
 #--------------------------------------------------------------
 # MLM for change (GCM)
 #--------------------------------------------------------------
+
+# for this part of the practical, we use the "data_long" dataset
 
 # unconditional linear latent growth curve model
 
